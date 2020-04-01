@@ -7,6 +7,11 @@ import { HeaderComponent } from './template/header/header.component';
 import { SidebarComponent } from './template/sidebar/sidebar.component';
 import { ContentsComponent } from './template/contents/contents.component';
 import { InputJemaatComponent } from './data/jemaat/form/input-jemaat/input-jemaat.component';
+import {RouterModule, Routes} from '@angular/router';
+
+const appRoutes: Routes = [
+  {path: 'form-jemaat', component: InputJemaatComponent}
+  ]
 
 @NgModule({
   declarations: [
@@ -18,7 +23,8 @@ import { InputJemaatComponent } from './data/jemaat/form/input-jemaat/input-jema
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
