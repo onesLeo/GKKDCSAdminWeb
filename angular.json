@@ -28,12 +28,13 @@
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/assets/js/jquery.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
               "node_modules/assets/js/popper.min.js",
               "node_modules/assets/js/bootstrap-material-design.min.js",
               "node_modules/assets/js/perfect-scrollbar.jquery.min.js",
               "node_modules/assets/js/moment.min.js",
-              "node_modules/assets/js/material-dashboard.min.js"
+              "node_modules/assets/js/material-dashboard.min.js",
+              "node_modules/assets/js/jquery.validate.min.js"
             ]
           },
           "configurations": {

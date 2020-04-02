@@ -1,15 +1,164 @@
-<div class="row">
-  <div class="col-md-12">
-    <div class="card ">
-      <div class="card-header card-header-success card-header-icon">
-        <div class="card-icon">
-          <i class="material-icons"></i>
-        </div>
-        <h4 class="card-title">Input Jemaat</h4>
-      </div>
-      <div class="card-body ">
-        <div class="row">
-          <p>Input Jemaat Works!</p>
+<div class="col-md-12">
+  <div class="card ">
+    <!--      <div class="card-header card-header-success card-header-icon">-->
+    <!--        <div class="card-icon">-->
+    <!--          <i class="material-icons"></i>-->
+    <!--        </div>-->
+    <!--        <h4 class="card-title">Input Jemaat</h4>-->
+    <!--      </div>-->
+    <div class="card-body ">
+      <div class="row">
+        <div class="col-md-10">
+          <div class="card-product">
+            <form id="TypeValidation" class="form-horizontal" action="" method="">
+              <div class="card ">
+                <div class="card-header card-header-rose card-header-text">
+                  <div class="card-text">
+                    <h4 class="card-title">Input Jemaat</h4>
+                  </div>
+                </div>
+                <div class="card-body ">
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Nama Jemaat </label>
+                    <div class="col-sm-7">
+                      <div class="form-group">
+                        <input class="form-control" type="text" name="required" required="true"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Nomor KTP</label>
+                    <div class="col-sm-7">
+                      <div class="form-group">
+                        <input class="form-control" type="text" name="required" required="true"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Alamat Jemaat </label>
+                    <div class="col-sm-7">
+                      <div class="form-group">
+                        <input class="form-control" type="text" name="required" required="true"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Kode Post</label>
+                    <div class="col-sm-7">
+                      <div class="form-group">
+                        <input class="form-control" type="text" name="number" number="true" required="true"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Nomor Telp</label>
+                    <div class="col-sm-7">
+                      <div class="form-group">
+                        <input class="form-control" type="text" name="required" required="true"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Tanggal Lahir</label>
+                    <div class="col-sm-10">
+                      <div class="form-group">
+                        <input type="text" class="form-control datepicker">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-7">
+                      <div class="form-group">
+                        <input class="form-control" type="text" name="email" email="true" required="true"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label label-checkbox">Status Jemaat</label>
+                    <div class="col-sm-10 checkbox-radios">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="radio" name="exampleRadios" value="option2" checked> Menikah
+                          <span class="circle">
+                              <span class="check"></span>
+                            </span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="radio" name="exampleRadios" value="option1"> Duda / Janda
+                          <span class="circle">
+                              <span class="check"></span>
+                            </span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="radio" name="exampleRadios" value="option1"> Single
+                          <span class="circle">
+                              <span class="check"></span>
+                            </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label label-checkbox">Status Keanggotaan</label>
+                    <div class="col-sm-10 checkbox-radios">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="radio" name="exampleRadios" value="option2" checked> Jemaat Komit
+                          <span class="circle">
+                              <span class="check"></span>
+                            </span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="radio" name="exampleRadios" value="option1"> Participants
+                          <span class="circle">
+                              <span class="check"></span>
+                            </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Url</label>
+                    <div class="col-sm-7">
+                      <div class="form-group">
+                        <input class="form-control" type="text" name="url" url="true" required="true"/>
+                      </div>
+                    </div>
+                    <label class="col-sm-3 label-on-right">
+                      <code>url="true"</code>
+                    </label>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-2 col-form-label">Equal to</label>
+                    <div class="col-sm-3">
+                      <div class="form-group">
+                        <input class="form-control" id="idSource" type="text" placeholder="#idSource" required="true"/>
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="form-group">
+                        <input class="form-control" id="idDestination" type="text" placeholder="#idDestination"
+                               equalTo="#idSource" required="true"/>
+                      </div>
+                    </div>
+                    <label class="col-sm-4 label-on-right">
+                      <code>equalTo="#idSource"</code>
+                    </label>
+                  </div>
+                </div>
+                <div class="card-footer ml-auto mr-auto">
+                  <button type="submit" class="btn btn-rose">Validate Inputs</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
