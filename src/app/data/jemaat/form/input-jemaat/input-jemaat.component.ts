@@ -18,7 +18,7 @@ export class InputJemaatComponent implements OnInit {
     alamatJemaat: new FormControl(''),
     kodePost: new FormControl(''),
     nomorTelp: new FormControl(''),
-    tanggalLahir: new FormControl(''),
+    tglLahir: new FormControl(''),
     email: new FormControl(''),
     statusJemaat: new FormControl(''),
     statusKeanggotaan: new FormControl('')
@@ -53,7 +53,7 @@ export class InputJemaatComponent implements OnInit {
   }
 
   simpanInformasiJemaat() {
-    const stringTglLahir: string = this.inputJemaatForm.get('tanggalLahir').value;
+    const stringTglLahir: string = this.inputJemaatForm.get('tglLahir').value;
     console.log('String tgl Lahir ' + stringTglLahir);
     const dateOfBirth: Date = new Date(stringTglLahir);
     const dataJemaat: JemaatModel = {
@@ -67,7 +67,7 @@ export class InputJemaatComponent implements OnInit {
       statusJemaat: this.inputJemaatForm.get('statusJemaat').value,
       statusKeanggotaan: this.inputJemaatForm.get('statusKeanggotaan').value } as JemaatModel;
     console.log('Jemaat DTO Information Tanggal Lahir ' + dataJemaat.tanggalLahir);
-    console.log('Jemaat DTO Information Tanggal Lahir Form ' + this.inputJemaatForm.get('tanggalLahir').value);
+    console.log('Jemaat DTO Information Tanggal Lahir Form ' + this.inputJemaatForm.get('tglLahir').value);
     console.log('Jemaat DTO Information Email ' + dataJemaat.email);
     console.log('Jemaat DTO Information Status Jemaat' + dataJemaat.statusJemaat);
     console.log('Jemaat DTO Information Status Keanggotaan' + dataJemaat.statusKeanggotaan);

@@ -62,7 +62,10 @@
                     <label class="col-sm-2 col-form-label">Tanggal Lahir</label>
                     <div class="col-md-4">
                       <div class="form-group">
-                        <input type="text" class="form-control datepicker" formControlName="tanggalLahir" required="true">
+<!--                        <input type="text" class="form-control datepicker" formControlName="tglLahir" >-->
+                        <input matInput [matDatepicker]="mayDatePicker" disabled formControlName="tglLahir">
+                        <mat-datepicker-toggle matSuffix [for]="mayDatePicker"></mat-datepicker-toggle>
+                        <mat-datepicker #mayDatePicker disabled="false"></mat-datepicker>
                       </div>
                     </div>
                   </div>

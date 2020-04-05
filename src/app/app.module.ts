@@ -10,6 +10,8 @@ import { InputJemaatComponent } from './data/jemaat/form/input-jemaat/input-jema
 import {RouterModule, Routes} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
 
 const appRoutes: Routes = [
   {path: 'form-jemaat', component: InputJemaatComponent}
@@ -28,8 +30,10 @@ const appRoutes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatDatepickerModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
