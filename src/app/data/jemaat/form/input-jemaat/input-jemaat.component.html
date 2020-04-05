@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-10">
           <div class="card-product">
-            <form id="TypeValidation" class="form-horizontal" action="" method="">
+            <form id="TypeValidation" class="form-horizontal" [formGroup]="inputJemaatForm" (ngSubmit)="simpanInformasiJemaat()">
               <div class="card ">
                 <div class="card-header card-header-rose card-header-text">
                   <div class="card-text">
@@ -22,7 +22,7 @@
                     <label class="col-sm-2 col-form-label">Nama Jemaat </label>
                     <div class="col-sm-7">
                       <div class="form-group">
-                        <input class="form-control" type="text" name="required" required="true"/>
+                        <input class="form-control" type="text" formControlName="namaJemaat"  required="true"/>
                       </div>
                     </div>
                   </div>
@@ -30,7 +30,7 @@
                     <label class="col-sm-2 col-form-label">Nomor KTP</label>
                     <div class="col-sm-7">
                       <div class="form-group">
-                        <input class="form-control" type="text" name="required" required="true"/>
+                        <input class="form-control" type="text" formControlName="nomorKTP" required="true"/>
                       </div>
                     </div>
                   </div>
@@ -38,7 +38,7 @@
                     <label class="col-sm-2 col-form-label">Alamat Jemaat </label>
                     <div class="col-sm-7">
                       <div class="form-group">
-                        <input class="form-control" type="text" name="required" required="true"/>
+                        <input class="form-control" type="text" formControlName="alamatJemaat" required="true"/>
                       </div>
                     </div>
                   </div>
@@ -46,7 +46,7 @@
                     <label class="col-sm-2 col-form-label">Kode Post</label>
                     <div class="col-sm-7">
                       <div class="form-group">
-                        <input class="form-control" type="text" name="number" number="true" required="true"/>
+                        <input class="form-control" type="text" formControlName="kodePost" number="true" required="true"/>
                       </div>
                     </div>
                   </div>
@@ -54,15 +54,15 @@
                     <label class="col-sm-2 col-form-label">Nomor Telp</label>
                     <div class="col-sm-7">
                       <div class="form-group">
-                        <input class="form-control" type="text" name="required" required="true"/>
+                        <input class="form-control" type="text" formControlName="nomorTelp" required="true"/>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <label class="col-sm-2 col-form-label">Tanggal Lahir</label>
-                    <div class="col-sm-10">
+                    <div class="col-md-4">
                       <div class="form-group">
-                        <input type="text" class="form-control datepicker">
+                        <input type="text" class="form-control datepicker" formControlName="tanggalLahir" required="true">
                       </div>
                     </div>
                   </div>
@@ -70,7 +70,7 @@
                     <label class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-7">
                       <div class="form-group">
-                        <input class="form-control" type="text" name="email" email="true" required="true"/>
+                        <input class="form-control" type="text" formControlName="email" email="true" required="true"/>
                       </div>
                     </div>
                   </div>
@@ -79,7 +79,7 @@
                     <div class="col-sm-10 checkbox-radios">
                       <div class="form-check">
                         <label class="form-check-label">
-                          <input class="form-check-input" type="radio" name="exampleRadios" value="option2" checked> Menikah
+                          <input class="form-check-input" type="radio" formControlName="statusJemaat" value="1" checked> Menikah
                           <span class="circle">
                               <span class="check"></span>
                             </span>
@@ -87,7 +87,7 @@
                       </div>
                       <div class="form-check">
                         <label class="form-check-label">
-                          <input class="form-check-input" type="radio" name="exampleRadios" value="option1"> Duda / Janda
+                          <input class="form-check-input" type="radio" formControlName="statusJemaat" value="2"> Duda / Janda
                           <span class="circle">
                               <span class="check"></span>
                             </span>
@@ -95,7 +95,7 @@
                       </div>
                       <div class="form-check">
                         <label class="form-check-label">
-                          <input class="form-check-input" type="radio" name="exampleRadios" value="option1"> Single
+                          <input class="form-check-input" type="radio" formControlName="statusJemaat" value="3"> Single
                           <span class="circle">
                               <span class="check"></span>
                             </span>
@@ -108,7 +108,7 @@
                     <div class="col-sm-10 checkbox-radios">
                       <div class="form-check">
                         <label class="form-check-label">
-                          <input class="form-check-input" type="radio" name="exampleRadios" value="option2" checked> Jemaat Komit
+                            <input class="form-check-input" type="radio" formControlName="statusKeanggotaan" value="1" checked> Jemaat Komit
                           <span class="circle">
                               <span class="check"></span>
                             </span>
@@ -116,7 +116,7 @@
                       </div>
                       <div class="form-check">
                         <label class="form-check-label">
-                          <input class="form-check-input" type="radio" name="exampleRadios" value="option1"> Participants
+                          <input class="form-check-input" type="radio" formControlName="statusKeanggotaan" value="2"> Participants
                           <span class="circle">
                               <span class="check"></span>
                             </span>
@@ -124,37 +124,9 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <label class="col-sm-2 col-form-label">Url</label>
-                    <div class="col-sm-7">
-                      <div class="form-group">
-                        <input class="form-control" type="text" name="url" url="true" required="true"/>
-                      </div>
-                    </div>
-                    <label class="col-sm-3 label-on-right">
-                      <code>url="true"</code>
-                    </label>
-                  </div>
-                  <div class="row">
-                    <label class="col-sm-2 col-form-label">Equal to</label>
-                    <div class="col-sm-3">
-                      <div class="form-group">
-                        <input class="form-control" id="idSource" type="text" placeholder="#idSource" required="true"/>
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="form-group">
-                        <input class="form-control" id="idDestination" type="text" placeholder="#idDestination"
-                               equalTo="#idSource" required="true"/>
-                      </div>
-                    </div>
-                    <label class="col-sm-4 label-on-right">
-                      <code>equalTo="#idSource"</code>
-                    </label>
-                  </div>
                 </div>
                 <div class="card-footer ml-auto mr-auto">
-                  <button type="submit" class="btn btn-rose">Validate Inputs</button>
+                  <button type="submit" [disabled]="!inputJemaatForm.valid" class="btn btn-rose">Validate Inputs</button>
                 </div>
               </div>
             </form>
