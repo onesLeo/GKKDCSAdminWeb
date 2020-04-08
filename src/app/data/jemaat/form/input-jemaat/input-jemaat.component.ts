@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {JemaatModel} from '../../../../dto/JemaatModel';
 import {JemaatService} from '../../../../services/jemaat.service';
+import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 declare var $: any;
 declare var md: any;
 
@@ -11,7 +12,9 @@ declare var md: any;
   styleUrls: ['./input-jemaat.component.css']
 })
 export class InputJemaatComponent implements OnInit {
-
+  dob = new FormControl(new Date());
+  date: {year: number, month: number};
+  model: Date;
   inputJemaatForm = new FormGroup({
     namaJemaat: new FormControl(''),
     nomorKTP: new FormControl(''),
@@ -62,7 +65,7 @@ export class InputJemaatComponent implements OnInit {
       alamatJemaat: this.inputJemaatForm.get('alamatJemaat').value,
       kodepost: this.inputJemaatForm.get('kodePost').value,
       nomorTelp: this.inputJemaatForm.get('nomorTelp').value,
-      tanggalLahir: dateOfBirth,
+      tanggalLahir: this.inputJemaatForm.get('tglLahir').value,
       email: this.inputJemaatForm.get('email').value,
       statusJemaat: this.inputJemaatForm.get('statusJemaat').value,
       statusKeanggotaan: this.inputJemaatForm.get('statusKeanggotaan').value } as JemaatModel;
@@ -71,6 +74,7 @@ export class InputJemaatComponent implements OnInit {
     console.log('Jemaat DTO Information Email ' + dataJemaat.email);
     console.log('Jemaat DTO Information Status Jemaat' + dataJemaat.statusJemaat);
     console.log('Jemaat DTO Information Status Keanggotaan' + dataJemaat.statusKeanggotaan);
+    console.log('MODEL TGL LAHIR ' + this.model);
     this.jemaatService.insertJemaat(dataJemaat).subscribe(
       (dataResponse) => console.log(dataResponse),
       (error) => console.log(error));

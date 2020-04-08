@@ -62,10 +62,14 @@
                     <label class="col-sm-2 col-form-label">Tanggal Lahir</label>
                     <div class="col-md-4">
                       <div class="form-group">
-<!--                        <input type="text" class="form-control datepicker" formControlName="tglLahir" >-->
-                        <input matInput [matDatepicker]="mayDatePicker" disabled formControlName="tglLahir">
-                        <mat-datepicker-toggle matSuffix [for]="mayDatePicker"></mat-datepicker-toggle>
-                        <mat-datepicker #mayDatePicker disabled="false"></mat-datepicker>
+                        <div class="input-group">
+                          <input class="form-control" placeholder="yyyy-mm-dd"
+                                 name="dp" [(ngModel)]="model" formControlName="tglLahir" ngbDatepicker #d="ngbDatepicker">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                          </div>
+                        </div>
+<!--                        <input type="text" class="form-control datepicker" [(ngModel)]="testDate">-->
                       </div>
                     </div>
                   </div>
@@ -127,6 +131,16 @@
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="row">
+                  <p>
+                    Form Value: {{ inputJemaatForm.value | json }}
+                  </p>
+                  <p>
+                  DOB : {{ dob.value }}
+                    <br/>
+                  Test date : {{ model | json }}
+                  </p>
                 </div>
                 <div class="card-footer ml-auto mr-auto">
                   <button type="submit" [disabled]="!inputJemaatForm.valid" class="btn btn-rose">Validate Inputs</button>

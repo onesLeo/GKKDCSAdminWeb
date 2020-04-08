@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
+import {MatNativeDateModule} from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgbDatepickerModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
   {path: 'form-jemaat', component: InputJemaatComponent}
@@ -27,15 +30,20 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    NgbModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    NgbDatepickerModule
   ],
   providers: [],
+  exports: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
